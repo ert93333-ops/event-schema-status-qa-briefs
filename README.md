@@ -23,6 +23,7 @@ The landing page includes pricing hypothesis, local purchase-intent capture, a p
 ## SEO asset
 
 - [Event structured data checklist](https://ert93333-ops.github.io/event-schema-status-qa-briefs/event-structured-data-checklist.html)
+- [Public launch checklist Gist](https://gist.github.com/ert93333-ops/9a640e345c2a9e8dd3ba45ea75f4fb84)
 
 ## Marketing test URLs
 
