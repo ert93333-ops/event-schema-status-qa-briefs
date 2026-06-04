@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Schema Status QA Briefs | event structured data checklist</title>
+    <meta
+      name="description"
+      content="Paste Event JSON-LD, visible event notes, status/date notes, venue and ticket notes, organizer notes, and owner notes to create a copyable event schema status QA brief."
+    >
+    <link rel="canonical" href="https://ert93333-ops.github.io/event-schema-status-qa-briefs/">
+    <meta property="og:title" content="Event Schema Status QA Briefs">
+    <meta property="og:description" content="Catch Event schema status drift, stale dates, timezone risk, venue/online mismatch, ticket URL ambiguity, visible copy mismatch, organizer gaps, and cleanup owners.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ert93333-ops.github.io/event-schema-status-qa-briefs/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-product="Event Schema Status QA Briefs">
+    <a class="skip-link" href="#workflow">Skip to event schema QA</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Event Schema Status QA Briefs home">
+          <span class="brand-mark" aria-hidden="true">EVT</span>
+          <span>Event Schema Status QA Briefs</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#workflow">Auditor</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#waitlist">Early access</a>
+          <a href="event-structured-data-checklist.html">Checklist</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Event structured data checklist</p>
+            <h1>Catch event schema status drift before tickets go stale.</h1>
+            <p class="hero-subtitle">
+              Paste Event JSON-LD, visible event notes, status/date notes, venue/online notes,
+              ticket/offer notes, performer/organizer notes, page type, and owner notes to flag missing
+              Event fields, cancellation/postponement drift, timezone risk, venue/online mismatch,
+              offer ambiguity, visible copy mismatch, organizer gaps, and missing cleanup ownership.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#workflow" data-track-cta="hero_audit">Audit sample event schema</a>
+              <a class="button secondary" href="#waitlist" data-track-cta="hero_waitlist">Request early access</a>
+            </div>
+            <dl class="signal-row" aria-label="Launch facts">
+              <div>
+                <dt>No crawl</dt>
+                <dd>Paste-in static MVP</dd>
+              </div>
+              <div>
+                <dt>Event schema</dt>
+                <dd>Status plus owner notes</dd>
+              </div>
+              <div>
+                <dt>$79/mo</dt>
+                <dd>Events/agency hypothesis</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="product-preview reveal" aria-label="Product preview">
+            <div class="preview-header">
+              <span class="status-dot"></span>
+              <span>Event launch QA</span>
+            </div>
+            <div class="preview-grid">
+              <div class="url-preview">
+                <p>Event still marked scheduled</p>
+                <p>startDate missing timezone</p>
+                <p>Hybrid event has no online location</p>
+                <p class="warn-line">ticket URL still points to old listing</p>
+              </div>
+              <div class="brief-preview">
+                <p class="brief-label">QA result</p>
+                <strong>Fix before launch</strong>
+                <p>Status, timezone, venue/online location, ticket offer, organizer, and owner decision need review.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="workflow" aria-labelledby="workflow-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Core workflow</p>
+            <h2 id="workflow-title">Paste Event markup. Get a status QA brief.</h2>
+            <p>
+              This MVP analyzes pasted samples in your browser. It does not fetch pages, crawl event sites,
+              call Rich Results Test, use Search Console, connect to ticketing platforms, provide ticketing/legal advice,
+              validate eligibility, or store private snippets remotely.
+            </p>
+          </div>
+
+          <div class="auditor-layout">
+            <form class="auditor-panel reveal" id="auditor-form">
+              <div class="field-row">
+                <label for="jsonld-input">Event JSON-LD</label>
+                <button class="text-button" type="button" id="load-sample" data-track-cta="load_sample">
+                  Load sample event status data
+                </button>
+              </div>
+              <textarea
+                id="jsonld-input"
+                aria-describedby="privacy-note"
+                placeholder="Paste Event JSON-LD snippets."
+              ></textarea>
+
+              <label for="visible-notes">Visible event notes</label>
+              <textarea
+                id="visible-notes"
+                class="short-textarea"
+                placeholder="Visible title, date, status banner, venue copy, online/hybrid copy, and whether the page is a single event or list."
+              ></textarea>
+
+              <label for="status-notes">Status and date notes</label>
+              <textarea
+                id="status-notes"
+                class="short-textarea"
+                placeholder="Scheduled, postponed, cancelled, rescheduled, sold out, timezone, start/end date, and visible update notes."
+              ></textarea>
+
+              <label for="location-notes">Venue and online notes</label>
+              <textarea
+                id="location-notes"
+                class="short-textarea"
+                placeholder="Venue name/address, virtual event URL, hybrid handling, room/stage notes, and location owner."
+              ></textarea>
+
+              <label for="offer-notes">Ticket and offer notes</label>
+              <textarea
+                id="offer-notes"
+                class="short-textarea"
+                placeholder="Ticket URL, price, availability, sale status, refund/cancellation note, and ticketing platform owner."
+              ></textarea>
+
+              <label for="organizer-notes">Performer and organizer notes</label>
+              <textarea
+                id="organizer-notes"
+                class="short-textarea"
+                placeholder="Organizer, performer, venue, host, speaker, or team responsible for public event facts."
+              ></textarea>
+
+              <label for="owner-notes">Owner notes</label>
+              <textarea
+                id="owner-notes"
+                class="short-textarea"
+                placeholder="Record event marketing, ticketing, venue, content, frontend, and SEO owner remediation decisions."
+              ></textarea>
+
+              <div class="form-grid compact-grid">
+                <label>
+                  Page type
+                  <select id="page-type">
+                    <option selected>Single event detail page</option>
+                    <option>Conference session page</option>
+                    <option>Venue event page</option>
+                    <option>Hybrid or online event page</option>
+                    <option>Cancelled or postponed event cleanup</option>
+                  </select>
+                </label>
+              </div>
+
+              <p class="privacy-note" id="privacy-note">
+                Paste only public-safe or anonymized samples. Output is technical SEO and launch QA guidance, not ticketing, legal, compliance, eligibility, ranking, indexing, event operations, or attendee-support advice.
+              </p>
+              <div class="workflow-actions">
+                <button class="button primary" type="submit" id="generate-brief" data-track-cta="generate_brief">
+                  Generate Event schema QA brief
+                </button>
+                <button class="button secondary" type="button" id="copy-brief" disabled>
+                  Copy brief
+                </button>
+              </div>
+              <p class="form-error" id="workflow-error" role="alert" aria-live="polite"></p>
+            </form>
+
+            <aside class="output-panel reveal" aria-labelledby="output-title">
+              <div class="output-header">
+                <div>
+                  <p class="eyebrow">Generated brief</p>
+                  <h3 id="output-title">No audit yet</h3>
+                </div>
+                <span class="confidence-pill" id="status-pill">Waiting</span>
+              </div>
+              <div class="brief-output empty" id="brief-output" aria-live="polite">
+                Load the sample or paste Event markup to generate an event schema status QA brief.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="why-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why this exists</p>
+            <h2 id="why-title">Event schema is a marketing, ticketing, venue, frontend, and SEO handoff problem.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>Check live status changes</h3>
+              <p>Review cancellation, postponement, reschedule, sold-out, and stale scheduled status before public updates.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Catch date and location drift</h3>
+              <p>Flag timezone, start/end date, venue address, online event URL, hybrid handling, and ticket offer gaps.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Copy the cleanup handoff</h3>
+              <p>Turn findings into clear event marketing, ticketing, venue, content, frontend, and SEO remediation prompts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="pricing" aria-labelledby="pricing-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Pricing hypothesis</p>
+            <h2 id="pricing-title">Reserve early access before billing is connected.</h2>
+            <p>Pricing is tested through demo requests and purchase intent while payments are unavailable.</p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <p class="plan-name">Solo</p>
+              <p class="plan-price">$19<span>/month</span></p>
+              <p>For one event site checking eventStatus, dates, location, tickets, and organizer handoff.</p>
+              <button class="button secondary plan-button" type="button" data-plan="Solo - $19/month" data-track-cta="solo_plan">
+                Request Solo access
+              </button>
+            </article>
+            <article class="price-card featured-price reveal">
+              <p class="plan-name">Events/agency</p>
+              <p class="plan-price">$79<span>/month</span></p>
+              <p>For teams checking recurring event calendars, conference sessions, venues, and ticket launches.</p>
+              <button class="button primary plan-button" type="button" data-plan="Events/agency - $79/month" data-track-cta="agency_plan">
+                Request Agency access
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="shell waitlist-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Early access</p>
+            <h2 id="waitlist-title">Request the first usable build.</h2>
+            <p>This form stores locally and prepares a public-safe GitHub issue handoff.</p>
+          </div>
+
+          <form class="waitlist-form reveal" id="waitlist-form">
+            <div class="form-grid">
+              <label>
+                Work email
+                <input id="email" name="email" type="email" required value="event-schema-smoke@example.invalid">
+              </label>
+              <label>
+                Role
+                <select id="role" name="role">
+                  <option selected>Event marketer</option>
+                  <option>Conference website owner</option>
+                  <option>Venue SEO</option>
+                  <option>Ticketing team</option>
+                  <option>Technical SEO agency</option>
+                </select>
+              </label>
+              <label>
+                Event page type
+                <select id="event-page-type" name="event-page-type">
+                  <option selected>Single event detail page</option>
+                  <option>Conference session page</option>
+                  <option>Venue event page</option>
+                  <option>Hybrid or online event page</option>
+                  <option>Cancelled or postponed cleanup</option>
+                </select>
+              </label>
+              <label>
+                Event cadence
+                <select id="event-cadence" name="event-cadence">
+                  <option>One major event</option>
+                  <option selected>Monthly events</option>
+                  <option>Weekly events</option>
+                  <option>Large conference calendar</option>
+                </select>
+              </label>
+              <label>
+                Plan interest
+                <select id="plan" name="plan">
+                  <option>Solo - $19/month</option>
+                  <option selected>Events/agency - $79/month</option>
+                </select>
+              </label>
+              <label>
+                Willingness to pay
+                <select id="budget" name="budget">
+                  <option>$19/month for one event site</option>
+                  <option selected>$79/month for recurring event launch QA</option>
+                  <option>$199/month for conference calendar QA</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label class="wide-field">
+                Biggest Event schema QA pain
+                <textarea id="pain" name="pain" class="short-textarea">I need repeatable prelaunch checks for missing Event fields, eventStatus/date/timezone risk, venue/online mismatch, ticket offer ambiguity, visible event/schema mismatch, performer/organizer gaps, cancellation/postponement cleanup, and owner remediation decisions.</textarea>
+              </label>
+            </div>
+            <label class="checkbox-row">
+              <input id="purchase-intent" type="checkbox" checked>
+              <span>This is a real purchase-intent or pilot request if it catches event schema launch risks.</span>
+            </label>
+            <div class="workflow-actions">
+              <button class="button primary" type="submit" data-track-cta="waitlist_submit">Request early access</button>
+              <a class="button secondary" href="#workflow" data-track-cta="waitlist_demo">Try the auditor</a>
+            </div>
+            <p class="form-success" id="waitlist-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="handoff-panel reveal" id="handoff-panel" hidden>
+            <p class="eyebrow">Remote handoff</p>
+            <h3>Send a public-safe demo request</h3>
+            <p>Email stays local. The issue body contains role, event page type, cadence, plan interest, and pain only.</p>
+            <div class="workflow-actions">
+              <a class="button primary" id="remote-intent-link" href="#" target="_blank" rel="noreferrer">Open GitHub demo request</a>
+              <button class="button secondary" type="button" id="copy-request">Copy request details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" aria-labelledby="resources-title">
+        <div class="shell resources-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">SEO asset</p>
+            <h2 id="resources-title">Event structured data checklist</h2>
+            <p>A practical checklist is included for teams searching for event structured data checklist, Event schema QA, eventStatus structured data, event schema timezone checklist, and cancelled event structured data.</p>
+          </div>
+          <a class="resource-link reveal" href="event-structured-data-checklist.html" data-track-cta="seo_guide">
+            <span>Read the Event structured data checklist</span>
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="faq-title">
+        <div class="shell faq-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Event schema QA constraints are explicit.</h2>
+          </div>
+          <details class="reveal">
+            <summary>Does it crawl event pages?</summary>
+            <p>No. It produces a launch QA brief from pasted metadata and notes only.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it call Search Console or Rich Results Test?</summary>
+            <p>No. This MVP is browser-local and does not call Search Console, Rich Results Test, ticketing platforms, or external APIs.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it connect to Eventbrite, Ticketmaster, or an event platform?</summary>
+            <p>No. Ticketing status and offer details are pasted as notes for static QA only.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does it provide ticketing or legal advice?</summary>
+            <p>No. It is technical SEO and launch QA guidance, not ticketing, legal, compliance, eligibility, ranking, indexing, event operations, or attendee-support advice.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>Event Schema Status QA Briefs</span>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

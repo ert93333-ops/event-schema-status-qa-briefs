@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Structured Data Checklist | Event Schema Status QA Briefs</title>
+    <meta
+      name="description"
+      content="A practical Event structured data checklist for event launches, postponements, cancellations, hybrid event updates, and ticket offer QA."
+    >
+    <link rel="canonical" href="https://ert93333-ops.github.io/event-schema-status-qa-briefs/event-structured-data-checklist.html">
+    <meta property="og:title" content="Event structured data checklist">
+    <meta property="og:description" content="Check eventStatus, dates, timezone, venue/online location, offers, visible copy, organizer handoff, and cleanup owners.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ert93333-ops.github.io/event-schema-status-qa-briefs/event-structured-data-checklist.html">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-product="Event Schema Status QA Briefs">
+    <a class="skip-link" href="#checklist">Skip to checklist</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Event Schema Status QA Briefs home">
+          <span class="brand-mark" aria-hidden="true">EVT</span>
+          <span>Event Schema Status QA Briefs</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html#workflow">Auditor</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#waitlist">Early access</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="shell hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">SEO checklist</p>
+            <h1>Event structured data checklist</h1>
+            <p class="hero-subtitle">
+              Use this prelaunch checklist before event launches, date changes, cancellations, postponements,
+              hybrid updates, ticket offer changes, or recurring event calendar updates.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="index.html#workflow" data-track-cta="checklist_try_auditor">Audit sample event schema</a>
+              <a class="button secondary" href="index.html#waitlist" data-track-cta="checklist_waitlist">Request early access</a>
+            </div>
+          </div>
+
+          <div class="product-preview reveal" aria-label="Checklist preview">
+            <div class="preview-header">
+              <span class="status-dot"></span>
+              <span>Checklist focus</span>
+            </div>
+            <div class="brief-preview">
+              <p class="brief-label">Event schema QA</p>
+              <strong>Status, time, location, and offers</strong>
+              <p>Event status, timezone, venue/online location, tickets, visible copy, organizer, and owner handoff.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="checklist" aria-labelledby="checklist-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Checklist</p>
+            <h2 id="checklist-title">Run these checks before publishing event markup.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>1. Confirm event status</h3>
+              <p>Check EventScheduled, EventPostponed, EventRescheduled, EventCancelled, or sold-out language against the visible event banner and ticketing state.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>2. Check dates and timezone</h3>
+              <p>Confirm startDate and endDate match visible copy and include the intended timezone or offset when the event time is specific.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>3. Match venue and online details</h3>
+              <p>Compare visible venue address, room, livestream, virtual URL, and hybrid event handling against Event location and attendance mode.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>4. Review ticket offers</h3>
+              <p>Confirm offers.url, price, priceCurrency, availability, and stale ticket links before launch or date changes.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>5. Document organizer and performer facts</h3>
+              <p>Assign organizer, performer, speaker, or venue fact owners where they affect public event details.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>6. Assign cleanup owners</h3>
+              <p>Assign event marketing, ticketing, venue, content, frontend, and SEO owners before publishing. This checklist is technical QA, not legal or ticketing advice.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="handoff-title">
+        <div class="shell resources-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Handoff</p>
+            <h2 id="handoff-title">Copy this prelaunch prompt.</h2>
+            <p>
+              "Please confirm Event JSON-LD status, start/end date, timezone, venue or online location,
+              ticket offer URL, price, availability, visible status copy, organizer/performer facts,
+              and remediation owners before launch."
+            </p>
+          </div>
+          <a class="resource-link reveal" href="index.html#workflow" data-track-cta="checklist_core_workflow">
+            <span>Generate an Event schema QA brief</span>
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>Event Schema Status QA Briefs</span>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
